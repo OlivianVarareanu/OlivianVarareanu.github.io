@@ -1,8 +1,15 @@
+html {
+  scroll-behavior: smooth;
+}
+
 @media screen and (max-width:662px)
 {
+  
+
   body {
       margin: 0px;
-      
+      position: relative; /* Add this line for proper positioning */
+    overflow-x: hidden; /* Prevent horizontal scrollbar */
       background-color: rgb(0, 0, 0);
       background-repeat: no-repeat;
       color: rgb(255, 255, 255);
@@ -11,6 +18,35 @@
       border: none;
       position: relative;
   }
+
+  .scroll-to-top {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+    background-color: #007BFF;
+    border-radius: 50%;
+    cursor: pointer;
+    transform: translateY(100%); /* Start at the bottom of the screen */
+}
+
+.scroll-to-top.show {
+    animation: slide-up 0.5s ease; /* Use CSS animation for the translation */
+}
+.scroll-to-top:hover {
+    background-color: #0056b3;
+}
+
+@keyframes slide-up {
+  0% {
+      transform: translateY(100%);
+  }
+  100% {
+      transform: translateY(0);
+  }
+}
   
   
   .blue-dot {
@@ -177,7 +213,7 @@
       background-color: #0000007d;
       border-radius: 1vw;
       padding: 3vw;
-      height: 35vh;
+      height: 40vh;
       width: 35vw;
       display: grid;
     place-items: center; 
@@ -202,7 +238,7 @@
       border-radius: 1vw;
       padding: 3vw;
       width: 30vw;
-      height: 35vh;
+      height: 40vh;
       display: flex;
   flex-direction: column; /* Ensures a single column layout */
   justify-content: center; /* Center vertically within the container */
@@ -231,14 +267,13 @@
   
   
   .get-started {
-      width: 11vw;
-      height: 6vw;
+      width: 10vw;
+      height: 5vw;
       background-color: rgb(39, 114, 255);
       color: white;
       border: none;
       border-radius: 5px;
-      margin-top: 15px;
-      margin-bottom: 30px;
+    
       transition: background-color 0.15s;
       font-size: 1.4vw;
       
@@ -428,6 +463,8 @@
       gap: 5px;
       align-content: center;
     }
+
+  
   
     .column1 {
       text-align: right;
@@ -445,7 +482,8 @@
       display: block;
       margin: 0px 0px 10px 0px;
       margin-left: 0px;
-      width: 90%
+      width: 25vw;
+      font-size: 0.5rem;
     }
   
     .email-container {
@@ -488,7 +526,7 @@
   
     textarea{
       display: block;
-      width: 1fr;
+      width: 27vw;
       height: auto;
       font-size: 0.7rem;
     }
@@ -502,6 +540,7 @@
       color: white;
       margin-top: 20px;
       transition: background-color 0.2s;
+      font-size: 0.5rem;
     }
   
     .send:hover {
@@ -511,6 +550,9 @@
       border-style: solid;
       border-color: white;
     }
+    .details-text {
+      font-size: 0.2rem;
+     }
 }
 
 @media screen and (min-width: 662px) and (max-width:832px)
@@ -681,7 +723,7 @@
       background-color: #0000007d;
       border-radius: 1vw;
       padding: 3vw;
-      height: 35vh;
+      height: 40vh;
       display: flex;
   flex-direction: column; /* Ensures a single column layout */
   justify-content: center; /* Center vertically within the container */
@@ -700,7 +742,7 @@
       border-radius: 1vw;
       padding: 3vw;
       width: 25vw;
-      height: 35vh;
+      height: 40vh;
       display: flex;
   flex-direction: column; /* Ensures a single column layout */
   justify-content: center; /* Center vertically within the container */
@@ -983,7 +1025,7 @@
   
     .send {
       width: 10vw;
-      height: 5vw;
+      height: 4vw;
       background-color:#6655ff;
       border: none;
       border-radius: 5px;
@@ -1191,11 +1233,11 @@
     }
 
     .right-side2 h1 {
-      font-size: 5rem;
+      font-size: 2rem;
     } 
 
     .tell-me {
-      font-size: 0.6vw;
+      font-size: 0.8rem;
     }
   
     .content {
@@ -1219,8 +1261,8 @@
   
   
   .get-started {
-      width: 11vw;
-      height: 6vw;
+      width: 8vw;
+      height: 4vw;
       background-color: rgb(39, 114, 255);
       color: white;
       border: none;
@@ -1228,7 +1270,7 @@
       margin-top: 15px;
       margin-bottom: 30px;
       transition: background-color 0.15s;
-      font-size: 1.4vw;
+      font-size: 1vw;
       
   }
   
@@ -1458,14 +1500,14 @@
   
     textarea{
       display: block;
-      width: 1fr;
+      width: 25vw;
       height: auto;
       font-size: 0.7rem;
     }
   
     .send {
       width: 10vw;
-      height: 5vw;
+      height: 3vw;
       background-color:#6655ff;
       border: none;
       border-radius: 5px;
@@ -1679,8 +1721,8 @@ footer {
 
 
 .get-started {
-    width: 11vw;
-    height: 6vw;
+    width: 8vw;
+    height: 4vw;
     background-color: rgb(39, 114, 255);
     color: white;
     border: none;
@@ -1688,7 +1730,7 @@ footer {
     margin-top: 15px;
     margin-bottom: 30px;
     transition: background-color 0.15s;
-    font-size: 1.4vw;
+    font-size: 1vw;
     
 }
 
